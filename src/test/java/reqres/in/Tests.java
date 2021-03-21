@@ -2,19 +2,13 @@ package reqres.in;
 
 import io.qameta.allure.restassured.AllureRestAssured;
 import io.restassured.RestAssured;
-import io.restassured.http.ContentType;
-import io.restassured.response.Response;
-import org.hamcrest.Matchers;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
-
-import java.util.List;
 
 import static io.restassured.RestAssured.given;
 import static io.restassured.http.ContentType.*;
 import static org.hamcrest.Matchers.*;
 import static org.hamcrest.Matchers.is;
-import static org.hamcrest.Matchers.isA;
 import static utils.FileUtils.readStringFromFile;
 
 public class Tests {

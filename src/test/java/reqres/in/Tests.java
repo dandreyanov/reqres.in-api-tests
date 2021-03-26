@@ -6,9 +6,9 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 import static io.restassured.RestAssured.given;
-import static io.restassured.http.ContentType.*;
-import static org.hamcrest.Matchers.*;
+import static io.restassured.http.ContentType.JSON;
 import static org.hamcrest.Matchers.is;
+import static org.hamcrest.Matchers.notNullValue;
 import static utils.FileUtils.readStringFromFile;
 
 public class Tests {
@@ -29,15 +29,10 @@ public class Tests {
                 .then()
                 .statusCode(201)
                 .log().body()
-                .body("name",
-                        is("morpheus"))
-                .body("job",
-                        is("leader"))
-                .body("id",
-                        is(notNullValue()))
-                .body("createdAt",
-                        is(notNullValue()))
-        ;
+                .body("name", is("morpheus"))
+                .body("job", is("leader"))
+                .body("id", is(notNullValue()))
+                .body("createdAt", is(notNullValue()));
 
     }
 
@@ -51,13 +46,9 @@ public class Tests {
                 .then()
                 .statusCode(200)
                 .log().body()
-                .body("name",
-                        is("morpheus"))
-                .body("job",
-                        is("zion resident"))
-                .body("updatedAt",
-                        is(notNullValue()))
-        ;
+                .body("name", is("morpheus"))
+                .body("job", is("zion resident"))
+                .body("updatedAt", is(notNullValue()));
 
     }
 
@@ -90,8 +81,7 @@ public class Tests {
                 .then()
                 .statusCode(200)
                 .log().body()
-                .body(
-                        is(listUser))
+                .body(is(listUser))
         ;
     }
 
